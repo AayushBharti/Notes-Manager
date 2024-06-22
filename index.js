@@ -25,8 +25,8 @@ app.get("/file/:fileName", (req, res) => {
 });
 
 app.get("/edit/:fileName", (req, res) => {
-  res.render("edit",{
-    fileName:req.params.fileName
+  res.render("edit", {
+    fileName: req.params.fileName,
   });
 });
 
@@ -37,6 +37,17 @@ app.post("/create", (req, res) => {
     req.body.details,
     (err) => {
       console.log(err);
+    }
+  );
+});
+
+app.post("/edit", (req, res) => {
+  console.log(req.body);
+  fs.rename(
+    `./files/${req.body.previous}`,
+    `./files/${req.body.new}`,
+    (err) => {
+      res.redirect("/");
     }
   );
 });

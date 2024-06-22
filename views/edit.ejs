@@ -10,20 +10,28 @@
   <body class="bg-zinc-900 text-white">
     <div class="main min-h-screen bg-zinc-900 w-max-[1080px] ml-auto p-10">
         <a href="/" class="text-blue-500 inline-block mb-10">Go Back to Home</a>
-        <h1 class="text-3xl tracking-tighter"> <%= fileName %> </h1>
-       
+        
 
         <div class="form p-10 w-full">
-            <form action="/create" method="post">
+            <form action="/edit" method="post">
               <input
                 class="block w-full rounded-md outline-none text-white px-5 py-2 bg-zinc-800"
                 type="text"
-                name="title"
+                name="previous"
                 id=""
-                placeholder="New Title"
+                placeholder="Previous Name"
+                disabled="true"
+                value=" <%= fileName %> "
               />
               <input
-                class="bg-yellow-500 p-2 px-5 py-2 mt-2 text-white rounded-md"
+              class="block w-full mt-2 rounded-md outline-none text-white px-5 py-2 bg-zinc-800"
+              type="text"
+              name="new"
+              id=""
+              placeholder="New Name"
+            />
+              <input
+                class="bg-yellow-800  p-2 px-5 py-2 mt-5 text-white rounded-md"
                 type="submit"
                 name=""
                 id=""
